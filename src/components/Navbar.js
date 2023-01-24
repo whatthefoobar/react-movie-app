@@ -1,10 +1,18 @@
-import React from 'react';
+import React from "react";
 
-const Navbar = () => {
+const Navbar = ({ handleSubmit, searchTerm, handleOnChange }) => {
   return (
-    <header>
-      <input className="search" type="search" placeholder="Search..." />
-    </header>
+    <nav>
+      <form onSubmit={handleSubmit}>
+        <input
+          className="search"
+          type="search"
+          value={searchTerm}
+          placeholder="Search..."
+          onChange={handleOnChange}
+        />
+      </form>
+    </nav>
   );
 };
 

@@ -1,17 +1,18 @@
-import Movie from './components/Movie';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
 
 const featured_Api =
-  'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=81d9405cdcc5bb67fea79273223ddabd&page=1';
+  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=81d9405cdcc5bb67fea79273223ddabd&page=1";
 // const img_Api = 'https://api.themoviedb.org/t/p/w1280';
 
 const search_Api =
-  'https://api.themoviedb.org/3/search/movie?&api_key=81d9405cdcc5bb67fea79273223ddabd&query=';
+  "https://api.themoviedb.org/3/search/movie?&api_key=81d9405cdcc5bb67fea79273223ddabd&query=";
 
 function App() {
   const [movies, setMovies] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const fetchData = async (API) => {
     const result = await axios(API);
@@ -28,7 +29,7 @@ function App() {
     e.preventDefault();
     if (searchTerm) {
       fetchData(search_Api + searchTerm);
-      setSearchTerm('');
+      setSearchTerm("");
     }
   };
 
@@ -39,22 +40,13 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <form onSubmit={handleSubmit}>
-          <input
-            className="search"
-            type="search"
-            value={searchTerm}
-            placeholder="Search..."
-            onChange={handleOnChange}
-          />
-        </form>
-      </header>
-      <div className="movie-container">
-        {movies.map((movie) => (
-          <Movie key={movie.id} {...movie} />
-        ))}
-      </div>
+      <Navbar
+        handleSubmit={handleSubmit}
+        searchTerm={searchTerm}
+        handleOnChange={handleOnChange}
+      />
+
+      <Home movies={movies} />
     </div>
   );
 }
