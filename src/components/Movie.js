@@ -1,19 +1,27 @@
-import React from 'react';
-const img_Api = 'https://www.themoviedb.org/t/p/w1280';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+const img_Api = "https://www.themoviedb.org/t/p/w1280";
 
-const Movie = ({ title, poster_path, vote_average, overview }) => {
-  // const { title, poster_path } = data;
+const Movie = ({ title, poster_path, vote_average, overview, id }) => {
+  const navigate = useNavigate();
   const setVoteClass = (vote) => {
     if (vote >= 8) {
-      return 'green';
+      return "green";
     } else if (vote >= 6) {
-      return 'orange';
+      return "orange";
     } else {
-      return 'red';
+      return "red";
     }
   };
+  const goToMoviePage = () => {
+    console.log("go to movie page");
+    navigate(`/movie/${id}`);
+  };
+
   return (
-    <div className="movie">
+    <div className="movie" onClick={goToMoviePage}>
+      {/* <Link to={`/movie/${id}`}> */}
       <img src={`${img_Api}${poster_path}`} alt="movie poster" />
       <div className="movie-info">
         <h3>{title}</h3>
@@ -23,6 +31,7 @@ const Movie = ({ title, poster_path, vote_average, overview }) => {
         <h2>Overview:</h2>
         <p>{overview}</p>
       </div>
+      {/* </Link> */}
     </div>
   );
 };

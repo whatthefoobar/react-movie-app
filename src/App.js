@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import axios from "axios";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
+import MoviePage from "./pages/MoviePage";
 
 const featured_Api =
   "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=81d9405cdcc5bb67fea79273223ddabd&page=1";
@@ -40,13 +42,17 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar
-        handleSubmit={handleSubmit}
-        searchTerm={searchTerm}
-        handleOnChange={handleOnChange}
-      />
-
-      <Home movies={movies} />
+      <Router>
+        <Navbar
+          handleSubmit={handleSubmit}
+          searchTerm={searchTerm}
+          handleOnChange={handleOnChange}
+        />
+        <Routes>
+          <Route path="/movie/:id" element={<MoviePage />} />
+          <Route path="/" element={<Home movies={movies} />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
