@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const img_Api = "https://www.themoviedb.org/t/p/w1280";
 
 const Movie = ({ title, poster_path, vote_average, overview, id }) => {
