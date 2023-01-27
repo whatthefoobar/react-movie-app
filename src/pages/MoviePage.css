@@ -1,0 +1,36 @@
+.movie-container {
+  /* border: 2px solid pink; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.movie-container .movie-image {
+  flex: 3;
+}
+.movie-container .movie-description {
+  flex: 7;
+}
+.movie-container .movie-image img {
+  max-width: 100%;
+}
+.movie-container .movie-description h3 {
+  font-size: 1.8rem;
+}
+.movie-container .movie-description h2 {
+  margin-top: 1.5rem;
+  font-size: 1.6rem;
+}
+.movie-container .movie-description p {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+.genres {
+  display: flex;
+  gap: 1rem;
+  font-weight: 600;
+  color: antiquewhite;
+  font-size: 1.4rem;
+  /* justify-content: center;
+  align-items: center; */
+}
