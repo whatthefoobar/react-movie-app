@@ -48,6 +48,7 @@ function App() {
           searchTerm={searchTerm}
           handleOnChange={handleOnChange}
         />
+
         <Routes>
           <Route path="/movie/:id" element={<MoviePage />} />
           <Route path="/" element={<Home movies={movies} />} />
