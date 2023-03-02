@@ -1,5 +1,7 @@
 .movie-container {
   /* border: 2px solid pink; */
+  max-width: 1300px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,13 +42,10 @@
   .movie-container {
     flex-direction: column;
   }
-  /* .movie-container .movie-image {
-    flex: 5;
-  }
-  .movie-container .movie-image img {
+
+  /* .movie-container .movie-image img {
     width: 100%;
-  }
-  .movie-container .movie-description {
-    flex: 5;
+    height: 450px;
+    object-fit: cover;
   } */
 }

@@ -15,15 +15,23 @@ body {
   background-color: #333;
   color: white;
 }
+a {
+  text-decoration: none;
+  color: white;
+}
+
 .App {
   display: flex;
   flex-direction: column;
 }
 nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   background-color: rgb(80, 73, 73);
   padding: 1rem;
+}
+.logo {
+  margin-left: 50px;
 }
 .search {
   border: 2px solid #333;
@@ -34,7 +42,7 @@ nav {
   color: white;
 }
 
-.movie-container {
+.movies-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

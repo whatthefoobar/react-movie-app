@@ -7,8 +7,8 @@ const Home = ({ movies }) => {
     <>
       {/* <Banner /> */}
       <h2 className="home-title">Most popular releases</h2>
-      <div className="movie-container">
-        {/* {console.log(movies)} */}
+      <div className="movies-container">
+        {console.log(movies)}
 
         {movies.map((movie) => (
           <Movie key={movie.id} {...movie} />
