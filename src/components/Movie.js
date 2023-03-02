@@ -1,9 +1,8 @@
 import React from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 const img_Api = "https://www.themoviedb.org/t/p/w1280";
 
 const Movie = ({ title, poster_path, vote_average, overview, id }) => {
-  // const navigate = useNavigate();
   const setVoteClass = (vote) => {
     if (vote >= 8) {
       return "green";
@@ -13,10 +12,6 @@ const Movie = ({ title, poster_path, vote_average, overview, id }) => {
       return "red";
     }
   };
-  // const goToMoviePage = () => {
-  //   console.log("go to movie page");
-  //   navigate(`/movie/${id}`);
-  // };
 
   return (
     <div className="movie">
