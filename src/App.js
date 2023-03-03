@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 import axios from "axios";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
@@ -13,6 +18,7 @@ const search_Api =
   "https://api.themoviedb.org/3/search/movie?&api_key=81d9405cdcc5bb67fea79273223ddabd&query=";
 
 function App() {
+  // const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -29,6 +35,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (searchTerm) {
       fetchData(search_Api + searchTerm);
       setSearchTerm("");

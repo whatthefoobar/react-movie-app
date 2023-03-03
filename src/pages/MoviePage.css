@@ -1,7 +1,7 @@
 .movie-container {
   /* border: 2px solid pink; */
   max-width: 1300px;
-  margin: 0 auto;
+  margin: 30px auto;
   display: flex;
   align-items: center;
   justify-content: center;
