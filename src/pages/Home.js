@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import Banner from "../components/Banner";
 // import Banner from "../components/Banner";
 import Movie from "../components/Movie";
 import Pagination from "../components/Pagination";
 
 const Home = ({ movies }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(8);
+  const [postsPerPage, setPostsPerPage] = useState(10);
 
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
@@ -13,7 +14,7 @@ const Home = ({ movies }) => {
 
   return (
     <>
-      {/* <Banner /> */}
+      <Banner />
       <h2 className="home-title">Most popular releases</h2>
       <div className="movies-container">
         {console.log(movies)}
