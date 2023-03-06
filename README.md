@@ -6,7 +6,18 @@ Optional: use pagination, turn from Javascript to Typescript, use a style librar
 Next mission:
 -fix bug where you cannot search for movies from movie page
 
-Preview
-![p1](https://user-images.githubusercontent.com/69626975/222543100-f77204ef-2a76-4207-9a3b-5d68d037a639.PNG)
-![p2](https://user-images.githubusercontent.com/69626975/222543441-0d0091b1-22c0-4be3-92fa-3f66782b516a.PNG)
-![p3](https://user-images.githubusercontent.com/69626975/222543636-6d152c5c-5fe3-4fc0-a2e7-a40439a4de16.PNG)
+Preview:
+
+![p1](https://user-images.githubusercontent.com/69626975/222667199-4fe2599d-5781-4c9d-8237-806d6418cac5.PNG)
+
+
+
+![p2](https://user-images.githubusercontent.com/69626975/222667205-af3cf2f6-e1db-416c-ac2b-9416b5682e25.PNG)
+
+
+
+![p3](https://user-images.githubusercontent.com/69626975/222667214-7bf6c49c-9025-404b-8283-32139ee1f9a3.PNG)
+
+
+
+![p4](https://user-images.githubusercontent.com/69626975/222667224-9975cf84-3f99-4fcf-8d8c-eb92773c3ac7.PNG)
