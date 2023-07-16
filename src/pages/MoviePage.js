@@ -24,8 +24,6 @@ const MoviePage = () => {
 
   return (
     <div>
-      {console.log(movie)}
-
       <div className="movie-container">
         <div className="movie-image">
           <img src={`${img_Api}${movie.poster_path}`} alt="movie poster" />

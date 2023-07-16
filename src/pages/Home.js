@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Banner from "../components/Banner";
-// import Banner from "../components/Banner";
 import Movie from "../components/Movie";
 import Pagination from "../components/Pagination";
 
@@ -17,8 +16,6 @@ const Home = ({ movies }) => {
       <Banner />
       <h2 className="home-title">Most popular releases</h2>
       <div className="movies-container">
-        {console.log(movies)}
-
         {currentMovies.map((movie) => (
           <Movie key={movie.id} {...movie} />
         ))}
