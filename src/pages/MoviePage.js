@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./MoviePage.css";
+
 const MoviePage = () => {
   const params = useParams();
   const { id } = params;
@@ -13,7 +14,6 @@ const MoviePage = () => {
   const [movie, setMovie] = useState({});
   const fetchData = async (API) => {
     const result = await axios(API);
-
     setMovie(result.data);
   };
 
@@ -23,21 +23,19 @@ const MoviePage = () => {
   }, [id]);
 
   return (
-    <div>
-      <div className="movie-container">
-        <div className="movie-image">
-          <img src={`${img_Api}${movie.poster_path}`} alt="movie poster" />
-        </div>
-        <div className="movie-description">
-          <h3>{movie.title}</h3>
-          <h3>{movie.tagline}</h3>
-          <h2>Overview:</h2>
-          <p>{movie.overview}</p>
-          <div className="genres">
-            {movie.genres?.map((genre) => (
-              <span key={genre.id}>{genre.name}</span>
-            ))}
-          </div>
+    <div className="movie-container">
+      <div className="movie-image">
+        <img src={`${img_Api}${movie.poster_path}`} alt="movie poster" />
+      </div>
+      <div className="movie-description">
+        <h3>{movie.title}</h3>
+        <h3>{movie.tagline}</h3>
+        <h2>Overview:</h2>
+        <p>{movie.overview}</p>
+        <div className="genres">
+          {movie.genres?.map((genre) => (
+            <span key={genre.id}>{genre.name}</span>
+          ))}
         </div>
       </div>
     </div>
