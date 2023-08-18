@@ -24,6 +24,10 @@ function App() {
     fetchData(featured_Api);
   }, []);
 
+  useEffect(() => {
+    console.log(movies);
+  }, [movies]);
+
   const handleSubmit = (e, navigate) => {
     e.preventDefault();
 

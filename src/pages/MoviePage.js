@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./MoviePage.css";
+import moviePlaceholder from "../assets/movie-placeholder.png";
 
 const MoviePage = () => {
   const params = useParams();
@@ -13,7 +14,7 @@ const MoviePage = () => {
 
   const [movie, setMovie] = useState({});
   const fetchData = async (API) => {
-    const result = await axios(API);
+    const result = await axios.get(API);
     setMovie(result.data);
   };
 
@@ -25,7 +26,14 @@ const MoviePage = () => {
   return (
     <div className="movie-container">
       <div className="movie-image">
-        <img src={`${img_Api}${movie.poster_path}`} alt="movie poster" />
+        <img
+          src={
+            movie.poster_path !== null && movie.poster_path !== undefined
+              ? `${img_Api}${movie.poster_path}`
+              : moviePlaceholder
+          }
+          alt="movie poster"
+        />
       </div>
       <div className="movie-description">
         <h3>{movie.title}</h3>
