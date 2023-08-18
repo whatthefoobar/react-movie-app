@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./MoviePage.css";
-import moviePlaceholder from "../assets/movie-placeholder.png";
+import moviePlaceholder from "../assets/movie-placeholder.jpg";
 
 const MoviePage = () => {
   const params = useParams();
@@ -28,7 +28,7 @@ const MoviePage = () => {
       <div className="movie-image">
         <img
           src={
-            movie.poster_path !== null && movie.poster_path !== undefined
+            movie.poster_path
               ? `${img_Api}${movie.poster_path}`
               : moviePlaceholder
           }
