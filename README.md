@@ -4,15 +4,17 @@ Use a movie api and render data: create individual page for each movie
 Optional: use pagination, turn from Javascript to Typescript, use a style library
 
 Next mission:
--fix bug where you cannot search for movies from movie page
+-fix bug where you cannot search for movies from movie page (Done)
+-fix : add image placeholder in case image_path from api is null (Done)
 
 Preview:
-
-![p1](https://user-images.githubusercontent.com/69626975/222667199-4fe2599d-5781-4c9d-8237-806d6418cac5.PNG)
-
+![1](https://github.com/whatthefoobar/react-movie-app/assets/69626975/0b51e744-4772-4449-8856-e3da0cd7dc6f)
 
 
-![p2](https://user-images.githubusercontent.com/69626975/222667205-af3cf2f6-e1db-416c-ac2b-9416b5682e25.PNG)
+
+![2](https://github.com/whatthefoobar/react-movie-app/assets/69626975/f762fe79-9056-49d7-8e78-262a505cb1b1)
+
+
 
 
 
