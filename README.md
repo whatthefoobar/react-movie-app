@@ -8,18 +8,14 @@ Next mission:
 -fix : add image placeholder in case image_path from api is null (Done)
 
 Preview:
-![1](https://github.com/whatthefoobar/react-movie-app/assets/69626975/0b51e744-4772-4449-8856-e3da0cd7dc6f)
+
+![1](https://github.com/whatthefoobar/react-movie-app/assets/69626975/36cc25bf-e37c-42fe-9d7a-d5d3c033a68e)
 
 
 
-![2](https://github.com/whatthefoobar/react-movie-app/assets/69626975/f762fe79-9056-49d7-8e78-262a505cb1b1)
+![2](https://github.com/whatthefoobar/react-movie-app/assets/69626975/3fa3f57e-f5a8-47ae-a0c2-1a870f0e1054)
 
 
 
 
 
-![p3](https://user-images.githubusercontent.com/69626975/222667214-7bf6c49c-9025-404b-8283-32139ee1f9a3.PNG)
-
-
-
-![p4](https://user-images.githubusercontent.com/69626975/222667224-9975cf84-3f99-4fcf-8d8c-eb92773c3ac7.PNG)
