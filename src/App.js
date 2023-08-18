@@ -16,7 +16,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const fetchData = async (API) => {
-    const result = await axios(API);
+    const result = await axios.get(API);
     setMovies(result.data.results.filter(Boolean));
   };
 
