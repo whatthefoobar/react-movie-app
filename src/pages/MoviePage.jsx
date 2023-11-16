@@ -7,7 +7,6 @@ import moviePlaceholder from "../assets/movie-placeholder.jpg";
 import NotFound from "./NotFound";
 import Loading from "../components/Loading";
 import GoBack from "../components/GoBack";
-import Layout from "../components/Layout";
 
 const MoviePage = () => {
   const params = useParams();

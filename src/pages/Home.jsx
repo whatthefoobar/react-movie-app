@@ -1,15 +1,9 @@
 import Banner from "../components/Banner";
 import Movie from "../components/Movie";
 import Pagination from "../components/Pagination";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import Navbar from "../components/Navbar";
-import Layout from "../components/Layout";
-import { useDispatch } from "react-redux";
-import {
-  useFetchFeaturedMoviesQuery,
-  useFetchMoviesBySearchTermQuery,
-} from "../slices/apiSlice";
+import { useState } from "react";
+
+import { useFetchFeaturedMoviesQuery } from "../slices/apiSlice";
 import Loading from "../components/Loading";
 
 const Home = () => {
