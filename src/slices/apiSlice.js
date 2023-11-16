@@ -13,7 +13,7 @@ const apiSlice = createApi({
     }),
     fetchMoviesBySearchTerm: builder.query({
       query: (searchTerm) =>
-        `/search/movie?api_key=${API_KEY}&query=${searchTerm}`,
+        `/search/movie?api_key=${API_KEY}&query=${searchTerm}&page=1`,
     }),
   }),
 });

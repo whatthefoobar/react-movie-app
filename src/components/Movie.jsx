@@ -23,7 +23,9 @@ const Movie = ({ title, poster_path, vote_average, overview, id }) => {
         />
         <div className="movie-info">
           <h3>{title}</h3>
-          <span className={setVoteClass(vote_average)}>{vote_average}</span>
+          <span className={setVoteClass(vote_average)}>
+            {vote_average.toFixed(2)}
+          </span>
         </div>
         <div className="movie-overview">
           <h2>Overview:</h2>
