@@ -1,62 +1,11 @@
-import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import axios from "axios";
-import Home from "./pages/Home";
-import Navbar from "./components/Navbar";
-import MoviePage from "./pages/MoviePage";
-
-const featured_Api =
-  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=81d9405cdcc5bb67fea79273223ddabd&page=1";
-
-const search_Api =
-  "https://api.themoviedb.org/3/search/movie?&api_key=81d9405cdcc5bb67fea79273223ddabd&query=";
+import { Outlet } from "react-router-dom";
+import Layout from "./components/Layout";
 
 function App() {
-  const [movies, setMovies] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const fetchData = async (API) => {
-    const result = await axios.get(API);
-    setMovies(result.data.results.filter(Boolean));
-  };
-
-  useEffect(() => {
-    fetchData(featured_Api);
-  }, []);
-
-  useEffect(() => {
-    console.log(movies);
-  }, [movies]);
-
-  const handleSubmit = (e, navigate) => {
-    e.preventDefault();
-
-    if (searchTerm) {
-      navigate(`/`); // Navigate to the homepage
-      fetchData(search_Api + searchTerm);
-      setSearchTerm("");
-    }
-  };
-
-  const handleOnChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
   return (
-    <div className="App">
-      <Router>
-        <Navbar
-          handleSubmit={handleSubmit}
-          searchTerm={searchTerm}
-          handleOnChange={handleOnChange}
-        />
-
-        <Routes>
-          <Route path="/movie/:id" element={<MoviePage />} />
-          <Route path="/" element={<Home movies={movies} />} />
-        </Routes>
-      </Router>
-    </div>
+    <Layout>
+      <Outlet />
+    </Layout>
   );
 }
 
