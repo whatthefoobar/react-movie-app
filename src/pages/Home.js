@@ -27,9 +27,9 @@ const Home = () => {
   const { data: movies = [], isLoading } = useFetchFeaturedMoviesQuery();
   console.log("feat movies", movies);
 
-  const lastPostIndex = currentPage * postsPerPage;
-  const firstPostIndex = lastPostIndex - postsPerPage;
-  const currentMovies = movies.results.slice(firstPostIndex, lastPostIndex);
+  // const lastPostIndex = currentPage * postsPerPage;
+  // const firstPostIndex = lastPostIndex - postsPerPage;
+  // const currentMovies = movies.results.slice(firstPostIndex, lastPostIndex);
 
   return (
     <>
@@ -40,7 +40,7 @@ const Home = () => {
           <Loading />
         ) : (
           <>
-            {currentMovies.map((movie) => (
+            {movies.results.map((movie) => (
               <Movie key={movie.id} {...movie} />
             ))}
             <Pagination
