@@ -11,11 +11,11 @@ const SearchedMovies = () => {
   const postsPerPage = 10;
 
   const { keyword: searchTerm } = useParams();
-  console.log(searchTerm);
+  // console.log(searchTerm);
 
   const { data: searchedMovies, isLoading } =
     useFetchMoviesBySearchTermQuery(searchTerm);
-  console.log("searched movies", searchedMovies);
+  // console.log("searched movies", searchedMovies);
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
   const currentMovies =
@@ -23,7 +23,7 @@ const SearchedMovies = () => {
       ? searchedMovies.results.slice(firstPostIndex, lastPostIndex)
       : [];
 
-  console.log("current movies", currentMovies);
+  // console.log("current movies", currentMovies);
 
   return (
     <>

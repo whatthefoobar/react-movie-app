@@ -17,7 +17,7 @@ const Home = () => {
   const postsPerPage = 10;
 
   const { data: movies = [], isLoading } = useFetchFeaturedMoviesQuery();
-  console.log("feat movies", movies);
+  // console.log("feat movies", movies);
 
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
