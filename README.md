@@ -1,19 +1,18 @@
 # react-movie-app
 
-Use a movie api and render data: create individual page for each movie
-Optional: use pagination, turn from Javascript to Typescript, use a style library
+Using TMB api created a simple movie app that list most popular movies with individual movie page, and can search the movie database api for keyword. Results are paginated (first 20 results from the api for simplicity)
 
-Next mission:
--fix bug where you cannot search for movies from movie page (Done)
--fix : add image placeholder in case image_path from api is null (Done)
 
 Preview:
+![1](https://github.com/whatthefoobar/react-movie-app/assets/69626975/738cf3a6-47b7-460a-a418-4ff30190b614)
 
-![1](https://github.com/whatthefoobar/react-movie-app/assets/69626975/36cc25bf-e37c-42fe-9d7a-d5d3c033a68e)
+![2](https://github.com/whatthefoobar/react-movie-app/assets/69626975/70dd3114-80f1-40ea-985d-1db45727d83f)
+
+![3](https://github.com/whatthefoobar/react-movie-app/assets/69626975/2bd74777-1bd8-468c-b500-5764788bbeac)
 
 
 
-![2](https://github.com/whatthefoobar/react-movie-app/assets/69626975/3fa3f57e-f5a8-47ae-a0c2-1a870f0e1054)
+
 
 
 
