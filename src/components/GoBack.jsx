@@ -6,11 +6,22 @@ const GoBack = () => {
   return (
     <button
       className="go-back"
-      style={{ background: "transparent", border: "none" }}
+      style={{
+        background: "transparent",
+        border: "none",
+        marginBottom: "20px",
+      }}
     >
-      <Link to="/">
+      <Link
+        to="/"
+        style={{
+          fontSize: "1.6rem",
+          display: "flex",
+          gap: "5px",
+        }}
+      >
         <FaArrowLeft className="back-icon" />
-        Go back
+        Back
       </Link>
     </button>
   );
