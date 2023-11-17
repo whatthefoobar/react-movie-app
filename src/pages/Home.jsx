@@ -16,17 +16,16 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 10;
 
-  const { data: movies = [], isLoading } = useFetchFeaturedMoviesQuery();
+  const { data: movies, isLoading } = useFetchFeaturedMoviesQuery();
   // console.log("feat movies", movies);
 
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
+
   const currentMovies =
     movies && movies.results
       ? movies.results.slice(firstPostIndex, lastPostIndex)
       : [];
-
-  console.log("current movies", currentMovies);
 
   return (
     <>
