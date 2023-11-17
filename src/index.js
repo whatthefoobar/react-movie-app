@@ -15,6 +15,7 @@ import {
 import NotFound from "./pages/NotFound";
 import MoviePage from "./pages/MoviePage";
 import SearchedMovies from "./pages/SearchedMovies";
+// import Loading from "./components/Loading";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
       <Route path="/search/:keyword" element={<SearchedMovies />} />
       <Route path="/movie/:id" element={<MoviePage />} />
       <Route path="/404" element={<NotFound />} />
+      {/* <Route path="/loading" element={<Loading />} /> */}
       <Route path="*" element={<Navigate to="/404" />} />
     </Route>
   )

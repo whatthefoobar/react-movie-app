@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaArrowLeft } from "react-icons/fa"; // Assuming you're using react-icons library for icons
-
+import { FaArrowLeft } from "react-icons/fa";
 const GoBack = () => {
   return (
     <button
