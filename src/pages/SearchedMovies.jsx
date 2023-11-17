@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import "./SearchedMovies.css";
+import "./SearchedMovies.css";
 import Movie from "../components/Movie";
 import { useParams } from "react-router-dom";
 import { useFetchMoviesBySearchTermQuery } from "../slices/apiSlice";
