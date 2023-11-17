@@ -10,6 +10,7 @@ Preview:
 
 ![3](https://github.com/whatthefoobar/react-movie-app/assets/69626975/2bd74777-1bd8-468c-b500-5764788bbeac)
 
+![4](https://github.com/whatthefoobar/react-movie-app/assets/69626975/bf7e07a4-489d-4ed0-8308-09639a96b791)
 
 
 
