@@ -12,10 +12,17 @@ const apiSlice = createApi({
     fetchMoviesBySearchTerm: builder.query({
       query: (searchTerm) => `/movies/search?searchTerm=${searchTerm}`,
     }),
+    fetchFeaturedMovieById: builder.query({
+      // Adding a query for fetching a featured movie by ID
+      query: (id) => `/featured-movies/${id}`,
+    }),
   }),
 });
 
-export const { useFetchMoviesBySearchTermQuery, useFetchFeaturedMoviesQuery } =
-  apiSlice;
+export const {
+  useFetchMoviesBySearchTermQuery,
+  useFetchFeaturedMoviesQuery,
+  useFetchFeaturedMovieByIdQuery,
+} = apiSlice;
 
 export default apiSlice;
