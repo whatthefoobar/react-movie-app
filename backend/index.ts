@@ -11,13 +11,7 @@ const port = 5000;
 const BASE_URL = "https://api.themoviedb.org/3";
 const API_KEY = process.env.API_KEY;
 
-app.get("/", (req: Request, res: Response) => {
-  console.log("Api up and running");
-  res.send("Api up and running");
-});
-
 app.get("/api/featured-movies", async (req: Request, res: Response) => {
-  //node : to do can i somehow get all results and paginate through all results not just the fisrt 20 results on a page?
   try {
     const response = await axios.get(
       `${BASE_URL}/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}&page=1`
@@ -27,6 +21,8 @@ app.get("/api/featured-movies", async (req: Request, res: Response) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
+//node : to do can i somehow get all results and paginate through all results not just the fisrt 20 results on a page?
 
 // Endpoint to fetch featured movie by ID
 app.get("/api/featured-movies/:id", async (req: Request, res: Response) => {
@@ -61,6 +57,11 @@ app.get("/api/movies/search", async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }
+});
+
+app.get("/", (req: Request, res: Response) => {
+  console.log("Api up and running");
+  res.send("Api up and running");
 });
 
 app.listen(port, () => {

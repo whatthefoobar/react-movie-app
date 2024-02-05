@@ -1,10 +1,16 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import moviePlaceholder from "../assets/movie-placeholder.jpg";
 const img_Api = "https://www.themoviedb.org/t/p/w1280";
+interface IProps {
+  title: string;
+  poster_path: string | null;
+  vote_average: number;
+  overview: string;
+  id: number;
+}
 
-const Movie = ({ title, poster_path, vote_average, overview, id }) => {
-  const setVoteClass = (vote) => {
+const Movie = ({ title, poster_path, vote_average, overview, id }: IProps) => {
+  const setVoteClass = (vote: number) => {
     if (vote >= 8) {
       return "green";
     } else if (vote >= 6) {

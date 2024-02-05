@@ -1,11 +1,11 @@
-import { useState } from "react";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const Navbar = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+const Navbar: React.FC = () => {
+  const [searchTerm, setSearchTerm] = useState<string>("");
   const navigate = useNavigate();
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: FormEvent) => {
     e.preventDefault();
     if (searchTerm) {
       navigate(`/search/${searchTerm.trim()}`);
@@ -15,7 +15,7 @@ const Navbar = () => {
     }
   };
 
-  const handleOnChange = (e) => {
+  const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };
 
