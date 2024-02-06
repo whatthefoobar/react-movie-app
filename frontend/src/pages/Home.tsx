@@ -5,40 +5,13 @@ import Pagination from "../components/Pagination";
 
 import Loading from "../components/Loading";
 import { useFetchFeaturedMoviesQuery } from "../slices/apiSlice";
-
-interface IFeaturedMovie {
-  adult: boolean;
-  backdrop_path: string;
-  genre_ids: number[];
-  id: number;
-  original_language: string;
-  original_title: string;
-  overview: string;
-  popularity: number;
-  poster_path: string;
-  release_date: string;
-  title: string;
-  video: boolean;
-  vote_average: number;
-  vote_count: number;
-}
-
-// interface IFeaturedMoviesResponse {
-//   page: number;
-//   results: IFeaturedMovie[];
-//   total_pages: number;
-//   total_results: number;
-// }
+import { IFeaturedMovie } from "../types";
 
 const Home: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const postsPerPage: number = 10;
 
   const { data: movies, isLoading } = useFetchFeaturedMoviesQuery();
-  console.log("feat movies", movies);
-
-  // const { data: movies, isLoading } = useFetchFeaturedMoviesQuery();
-  // movies is feat movies api response from node
   // console.log("feat movies", movies);
 
   const lastPostIndex: number = currentPage * postsPerPage;
@@ -78,27 +51,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
-// export interface IFeaturedMoviesResponse {
-//   page: number;
-//   results: IFeaturedMovie[];
-//   total_pages: number;
-//   total_results: number;
-// }
-
-// export interface IFeaturedMovie {
-//   adult: boolean;
-//   backdrop_path: string;
-//   genre_ids: number[];
-//   id: number;
-//   original_language: string;
-//   original_title: string;
-//   overview: string;
-//   popularity: number;
-//   poster_path: string;
-//   release_date: string;
-//   title: string;
-//   video: boolean;
-//   vote_average: number;
-//   vote_count: number;
-// }

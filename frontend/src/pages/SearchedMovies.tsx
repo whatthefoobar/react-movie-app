@@ -39,8 +39,9 @@ const SearchedMovies = () => {
   // console.log(searchTerm);
 
   // searchedMovies is of type ISearchedMovieResult
-  const { data: searchedMovies, isLoading } =
-    useFetchMoviesBySearchTermQuery(searchTerm);
+  const { data: searchedMovies, isLoading } = useFetchMoviesBySearchTermQuery(
+    searchTerm!
+  );
   // console.log("searched movies", searchedMovies);
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
@@ -67,7 +68,7 @@ const SearchedMovies = () => {
               ))}
             </div>
             <Pagination
-              totalPosts={searchedMovies.results.length}
+              totalPosts={searchedMovies!.results.length}
               postsPerPage={postsPerPage}
               setCurrentPage={setCurrentPage}
               currentPage={currentPage}
