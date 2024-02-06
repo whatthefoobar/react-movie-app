@@ -1,4 +1,8 @@
 # react-movie-app
+To do: a
+- add skeleton loading
+- publish to render
+- either change the card gallery to a carousel with skeleton loading or change to fetch  call to modify pagination logic, I want to go though all pages of the api  response
 
 Using TMB api created a simple movie app that list most popular movies with individual movie page, and can search the movie database api for keyword. Results are paginated (first 20 results from the api for simplicity)
 
