@@ -1,5 +1,6 @@
 import "dotenv/config";
 import express from "express";
+import path from "path";
 import cors from "cors";
 import axios from "axios";
 import { Request, Response } from "express";
@@ -59,10 +60,25 @@ app.get("/api/movies/search", async (req: Request, res: Response) => {
   }
 });
 
-app.get("/", (req: Request, res: Response) => {
-  console.log("Api up and running");
-  res.send("Api up and running");
-});
+// app.get("/", (req: Request, res: Response) => {
+//   console.log("Api up and running");
+//   res.send("Api up and running");
+// });
+
+// for deplayment
+if (process.env.NODE_ENV === "production") {
+  const __dirname = path.resolve();
+  app.use(express.static(path.join(__dirname, "/frontend/build")));
+  // if in production the frontend buikd is served from the published backend
+  app.get("*", (req: Request, res: Response) =>
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+  );
+} else {
+  const __dirname = path.resolve();
+  app.get("/", (req: Request, res: Response) => {
+    res.send("API is running....");
+  });
+}
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
