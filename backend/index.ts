@@ -60,11 +60,6 @@ app.get("/api/movies/search", async (req: Request, res: Response) => {
   }
 });
 
-// app.get("/", (req: Request, res: Response) => {
-//   console.log("Api up and running");
-//   res.send("Api up and running");
-// });
-
 // for deplayment
 if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve();
