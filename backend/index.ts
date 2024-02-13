@@ -1,9 +1,9 @@
-import "dotenv/config";
 // import express from "express";
-import express = require("express");
 // import path from "path";
-import path = require("path");
 // import cors from "cors";
+import "dotenv/config";
+import express = require("express");
+import path = require("path");
 import cors = require("cors");
 import axios from "axios";
 import { Request, Response } from "express";
@@ -65,10 +65,10 @@ app.get("/api/movies/search", async (req: Request, res: Response) => {
 // for deplayment
 if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve();
-  app.use(express.static(path.join(__dirname, "/frontend/build")));
+  app.use(express.static(path.join(__dirname, "../frontend/build")));
   // if in production the frontend buikd is served from the published backend
   app.get("*", (req: Request, res: Response) =>
-    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+    res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"))
   );
 } else {
   const __dirname = path.resolve();
