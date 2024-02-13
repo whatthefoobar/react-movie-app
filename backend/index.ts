@@ -65,10 +65,10 @@ app.get("/api/movies/search", async (req: Request, res: Response) => {
 // for deplayment
 if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve();
-  app.use(express.static(path.join(__dirname, "../frontend/build")));
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
   // if in production the frontend buikd is served from the published backend
   app.get("*", (req: Request, res: Response) =>
-    res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"))
+    res.sendFile(path.resolve(__dirname, "../frontend/dist/index.html"))
   );
 } else {
   const __dirname = path.resolve();

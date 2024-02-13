@@ -12,9 +12,10 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import NotFound from "./pages/NotFound";
+
 import MoviePage from "./pages/MoviePage";
 import SearchedMovies from "./pages/SearchedMovies";
+import NotFound from "./pages/NotFound";
 // import Loading from "./components/Loading";
 
 const router = createBrowserRouter(
