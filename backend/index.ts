@@ -1,15 +1,16 @@
 import "dotenv/config";
-import express from "express";
-import path from "path";
-import cors from "cors";
-
+// import express from "express";
+import express = require("express");
+// import path from "path";
+import path = require("path");
+// import cors from "cors";
+import cors = require("cors");
 import axios from "axios";
 import { Request, Response } from "express";
 
 const app = express();
 app.use(cors());
 const port = 5000;
-
 const BASE_URL = "https://api.themoviedb.org/3";
 const API_KEY = process.env.API_KEY;
 
