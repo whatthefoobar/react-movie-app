@@ -5,7 +5,9 @@ import {
   ISearchedMovieResult,
 } from "../types";
 
-const BASE_URL = "http://localhost:5000/api/";
+// const BASE_URL = "http://localhost:5000/api/";
+// for deployment:
+const BASE_URL = "https://react-movie-backend.onrender.com";
 
 const apiSlice = createApi({
   reducerPath: "api",
