@@ -9,7 +9,11 @@ import axios from "axios";
 import { Request, Response } from "express";
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: "https://react-movie-app-op9b.onrender.com/",
+};
+
+app.use(cors(corsOptions));
 const port = 5000;
 const BASE_URL = "https://api.themoviedb.org/3";
 const API_KEY = process.env.API_KEY;
@@ -63,6 +67,7 @@ app.get("/api/movies/search", async (req: Request, res: Response) => {
 });
 
 // for deplayment
+
 if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve();
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
