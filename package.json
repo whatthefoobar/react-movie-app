@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "To do: a\r - add skeleton loading\r - publish to render\r - either change the card gallery to a carousel with skeleton loading or change to fetch  call to modify pagination logic, I want to go though all pages of the api  response",
   "scripts": {
-    "start": "cd backend && NODE_ENV=production node index.js",
+    "start": "cd backend && node index.js  NODE_ENV=production",
     "build": "cd frontend && npm install && npm run build && cd ../backend && npm install && tsc"
   },
   "keywords": [],
