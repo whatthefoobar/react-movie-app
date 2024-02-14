@@ -1,5 +1,6 @@
 # react-movie-app
-To do: a
+Redeployment in progress , attempting to redeploy as fullstack through render, have issued for the moment in production, but so far all working locally.
+To do: 
 - add skeleton loading
 - publish to render
 - either change the card gallery to a carousel with skeleton loading or change to fetch  call to modify pagination logic, I want to go though all pages of the api  response
