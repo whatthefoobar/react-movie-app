@@ -12,7 +12,7 @@ const Home: React.FC = () => {
   const postsPerPage: number = 10;
 
   const { data: movies, isLoading } = useFetchFeaturedMoviesQuery();
-  console.log("feat movies", movies);
+  // console.log("feat movies", movies);
 
   const lastPostIndex: number = currentPage * postsPerPage;
   const firstPostIndex: number = lastPostIndex - postsPerPage;
