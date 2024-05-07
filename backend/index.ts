@@ -71,36 +71,36 @@ app.get("/api/featured-movies", async (req: Request, res: Response) => {
 app.get("/api/featured-movies/:id", async (req: Request, res: Response) => {
   const { id } = req.params;
 
-  try {
-    const featuredMoviesData = fs.readFileSync("featured-movies.json", "utf8");
-
-    const featuredMovies = JSON.parse(featuredMoviesData);
-
-    const movie = featuredMovies.results.find(
-      (movie: IMovie) => movie.id.toString() === id
-    );
-
-    if (movie) {
-      res.json(movie);
-    } else {
-      res.status(404).json({ error: "Movie not found" });
-    }
-  } catch (error) {
-    console.error("Error fetching featured movie:", error);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-
   // try {
-  //   const apiUrl = `${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=en-US`;
+  //   const featuredMoviesData = fs.readFileSync("featured-movies.json", "utf8");
 
-  //   const response = await fetch(apiUrl);
-  //   const movie = await response.json();
+  //   const featuredMovies = JSON.parse(featuredMoviesData);
 
-  //   res.json(movie);
+  //   const movie = featuredMovies.results.find(
+  //     (movie: IMovie) => movie.id.toString() === id
+  //   );
+
+  //   if (movie) {
+  //     res.json(movie);
+  //   } else {
+  //     res.status(404).json({ error: "Movie not found" });
+  //   }
   // } catch (error) {
   //   console.error("Error fetching featured movie:", error);
   //   res.status(500).json({ error: "Internal Server Error" });
   // }
+
+  try {
+    const apiUrl = `${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=en-US`;
+
+    const response = await fetch(apiUrl);
+    const movie = await response.json();
+
+    res.json(movie);
+  } catch (error) {
+    console.error("Error fetching featured movie:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 });
 
 //search by key term(the whole db) - rewrite this to search only our local saved api response
