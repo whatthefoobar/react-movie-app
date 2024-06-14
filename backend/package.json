@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "/public/index.js",
   "scripts": {
-    "start": "tsc index.ts && node index.js",
+    "start": "tsc index.ts && node /public/index.js",
     "dev": "ts-node index.ts",
     "server": "nodemon backend/index.ts",
     "build": "npm install && tsc index.ts"
