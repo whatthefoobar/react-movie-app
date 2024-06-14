@@ -1,6 +1,3 @@
-// import express from "express";
-// import path from "path";
-// import cors from "cors";
 import "dotenv/config";
 import fs = require("fs");
 import express = require("express");
