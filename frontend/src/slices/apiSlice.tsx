@@ -15,13 +15,13 @@ const apiSlice = createApi({
   tagTypes: ["Movies"],
   endpoints: (builder) => ({
     fetchFeaturedMovies: builder.query<IFeaturedMoviesResponse, void>({
-      query: () => "featured-movies",
+      query: () => "api/featured-movies",
     }),
     fetchMoviesBySearchTerm: builder.query<ISearchedMovieResult, string>({
-      query: (searchTerm) => `movies/search?searchTerm=${searchTerm}`,
+      query: (searchTerm) => `api/movies/search?searchTerm=${searchTerm}`,
     }),
     fetchFeaturedMovieById: builder.query<IMovieDetails, string>({
-      query: (id) => `featured-movies/${id}`,
+      query: (id) => `api/featured-movies/${id}`,
     }),
   }),
 });
