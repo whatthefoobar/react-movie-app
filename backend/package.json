@@ -4,7 +4,7 @@
   "description": "",
   "main": "/public/index.js",
   "scripts": {
-    "start": "node public/index.js",
+    "start": "node dist/index.js",
     "dev": "ts-node index.ts",
     "server": "nodemon index.ts",
     "build": "npm install && tsc --project tsconfig.json"
