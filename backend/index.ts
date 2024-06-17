@@ -25,41 +25,27 @@ const API_KEY = process.env.API_KEY;
 
 app.get("/api/featured-movies", async (req: Request, res: Response) => {
   try {
-    let featuredMoviesData;
-    try {
-      // Try to read data from the JSON file
-      featuredMoviesData = fs.readFileSync("featured-movies.json", "utf8");
-    } catch (err) {
-      console.error("Error reading JSON file:", err);
-    }
-
-    if (featuredMoviesData) {
-      res.json(JSON.parse(featuredMoviesData));
-      return;
-    }
+    const response = await axios.get(
+      `${BASE_URL}/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}&page=1`
+    );
+    res.json(response.data);
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }
+  //save api response and serve from json file
   // try {
-  //   const response = await axios.get(
-  //     `${BASE_URL}/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}&page=1`
-  //   );
+  //   let featuredMoviesData;
+  //   try {
+  //     // Try to read data from the JSON file
+  //     featuredMoviesData = fs.readFileSync("featured-movies.json", "utf8");
+  //   } catch (err) {
+  //     console.error("Error reading JSON file:", err);
+  //   }
 
-  //   // Write API response data to a JSON file
-  //   fs.writeFile(
-  //     "featured-movies.json",
-  //     JSON.stringify(response.data),
-  //     (err) => {
-  //       if (err) {
-  //         console.error("Error writing JSON file:", err);
-  //         res.status(500).json({ error: "Internal Server Error" });
-  //         return;
-  //       }
-  //       console.log("API response data saved to featured-movies.json");
-  //     }
-  //   );
-
-  //   res.json(response.data);
+  //   if (featuredMoviesData) {
+  //     res.json(JSON.parse(featuredMoviesData));
+  //     return;
+  //   }
   // } catch (error) {
   //   res.status(500).json({ error: "Internal Server Error" });
   // }

@@ -5,8 +5,8 @@
   "main": "/public/index.js",
   "scripts": {
     "start": "node public/index.js",
-    "dev": "ts-node src/index.ts",
-    "server": "nodemon backend/index.ts",
+    "dev": "ts-node index.ts",
+    "server": "nodemon index.ts",
     "build": "npm install && tsc --project tsconfig.json"
   },
   "keywords": [],

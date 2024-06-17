@@ -1,6 +1,8 @@
 # .env
 # node_modules
 # ./dist
+./public
+.env
 index.js
 types.js
 # Logs
