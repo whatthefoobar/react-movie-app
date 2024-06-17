@@ -12,10 +12,7 @@ import { IMovie } from "./types";
 
 const app = express();
 const corsOptions = {
-  origin: [
-    "https://react-movie-app-op9b.onrender.com/",
-    "http://localhost:5173",
-  ],
+  origin: ["https://react-movie-app-op9b.onrender.com/"],
 };
 
 app.use(cors(corsOptions));
@@ -137,6 +134,7 @@ app.get("/api/movies/search", async (req: Request, res: Response) => {
 });
 
 // for deplayment
+console.log(process.env.NODE_ENV);
 
 if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve();
