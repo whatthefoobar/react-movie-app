@@ -7,7 +7,7 @@
     "start": "node dist/index.js",
     "dev": "ts-node index.ts",
     "server": "nodemon index.ts",
-    "build": "npm install && tsc --project tsconfig.json"
+    "build": "npm install && tsc"
   },
   "keywords": [],
   "author": "",
