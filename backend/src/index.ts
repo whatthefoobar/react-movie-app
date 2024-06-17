@@ -8,7 +8,6 @@ import path = require("path");
 import cors = require("cors");
 import axios from "axios";
 import { Request, Response } from "express";
-import { IMovie } from "./types";
 
 const app = express();
 const corsOptions = {
