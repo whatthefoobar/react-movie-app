@@ -7,7 +7,7 @@ import {
 
 // const BASE_URL = "http://localhost:5000/api/";
 // for deployment:
-const BASE_URL = process.env.BASE_URL;
+const BASE_URL = import.meta.env.BASE_URL;
 
 const apiSlice = createApi({
   reducerPath: "api",
